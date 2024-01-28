@@ -1,5 +1,6 @@
 package com.luciggl.Cardapio.entities;
 
+import com.luciggl.Cardapio.DTO.FoodRequestDTO;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 
@@ -19,12 +20,18 @@ public class Food implements Serializable {
     private Integer price;
     private String image;
 
+    public Food(FoodRequestDTO data){
+        this.title = data.title();
+        this.price = data.price();
+        this.image = data.image();
+    }
+
     public Food(){}
 
-    public Food(String title, Integer price, String image) {
+    public Food(String title, String image, Integer price) {
         this.title = title;
-        this.price = price;
         this.image = image;
+        this.price = price;
     }
 
     public long getId() {
