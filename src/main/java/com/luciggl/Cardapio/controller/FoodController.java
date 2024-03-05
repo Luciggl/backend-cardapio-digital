@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/food")
+@CrossOrigin(origins = "*")
 public class FoodController {
     @Autowired
     private FoodRepository repository;
